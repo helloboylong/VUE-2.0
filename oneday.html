@@ -3,12 +3,84 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>task_1_1_1</title>
+		<title>练习第一天</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			body {
+				background: #DEDEDE;
+			}
+			
+			.header {
+				height: 110px;
+				line-height: 110px;
+				background: #333;
+			}
+			
+			.left {
+				color: #fff;
+				font-size: 40px;
+				padding-left: 40px;
+			}
+			
+			.header ul {
+				position: relative;
+				float: right;
+			}
+			
+			.header li {
+				list-style: none;
+				margin-left: 10px;
+				margin-right: 10px;
+				float: left;
+				color: #FFFFFF;
+			}
+			
+			.header a:link {
+				color: #FFFFFF;
+				text-decoration: none;
+			}
+			
+			.text {
+				background: #fff;
+				margin: 30px;
+				padding: 20px;
+			}
+			
+			h2 {
+				font-size: 50px;
+				padding: 20px;
+			}
+			
+			h3,.p1{
+				color: #ccc;
+				padding: 10px; 
+			}
+			.p2{text-indent: 50px;line-height:45px;font-size: 30px;font-weight: 600;}
+			.text2 ul li{list-style: none;padding: 20px;}
+			.img2{border: 1px solid #CCCCCC;width: 50%;text-align: center;}
+			ol li{margin-left: 80px;line-height: 50px;font-size: 40px;font-weight: 600;}
+			caption{background: #333333;font-size: 40px;padding: 20px;}
+			.container table{width: 100%;}
+			.container table th,td{border-bottom: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;line-height: 55px;}
+			.container tr:last-child{background: #CCCCCC;}
+			.sidebar{text-align: center;width: 80%;}
+			.sidebar h1{border-left: 10px solid #CCCCCC;font-size: 50px;padding-left: 30px;margin-left: 30px;}
+		    .sidebar table{margin: 0 auto;}
+		    .sidebar tr td{border: none;text-align: left;}
+		    .miaoshu{margin: 20px;}
+		    input{padding: 11px;}
+		    input[type="radio"],input[type="checkbox"]{width: 30px;height: 30px;margin-top: 15px;}
+		    #submit{border-radius: 30px;background: #3355D0;color: #FFFFFF;width: 90%;margin-left: 50px; font-size: 50px;padding: 20px;}
+		</style>
 	</head>
 
 	<body>
 		<div class="header">
-			<h1>网站一级标题</h1>
+			<span class="left">baidu百度</span>
 			<ul>
 				<li>
 					<a href="http://www.baidu.com">导航链接一</a>
@@ -24,59 +96,60 @@
 				</li>
 			</ul>
 		</div>
-		<div class="text">
-			<div class="text1">
+		<div class="container">
+			<div class="text text1">
 				<h2>文章一级标题</h2>
 				<h3>文章二级标题</h3>
-				<p>
-					<span>文章作者</span><span>文章发表时间</span>
+				<p class="p1">
+					<span>文章作者</span>&nbsp;&nbsp;<span>文章发表时间</span>
 				</p>
-				<p>
-					这是一个很长的段落</br>
-					这是一个很长的段落</br>
-					这是一个很长的段落</br>
-					这是
-					<a href="http://www.baidu.com">一个</a>很长的段落</br>
-				</p>
-				<img src="images/banner.png" alt="github">
-				<p>
-					这是一个很长的段落</br>
-					这是一个很长的段落</br>
-					这是一个很长的段落</br>
-					这是
-					<a href="http://www.baidu.com" target="_blank">一个</a>很长的段落</br>
-				</p>
-			</div>
-			<div class="text2">
-				<h2>另一个文章一级标题</h2>
-				<h3>文章二级标题</h3>
 				<p>
 					这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落, 这是一个很长的段落
 					</br>这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落, 这是
 					<a href="http://www.baidu.com">一个</a>很长的段落</br>
 				</p>
-				<img src="images/banner.png" alt="touxiang">
+				<img src="images/baidu.png" alt="github">
+				<p  class="p2">
+					这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落, 这是一个很长的段落
+					</br>这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落,这是一个很长的段落, 这是
+					<a href="http://www.baidu.com">一个</a>很长的段落</br>
+				</p>
+			</div>
+			<div class="text text2">
+				<h2>另一个文章一级标题</h2>
+				<h3>文章二级标题</h3>
+				<img src="images/baidu.png" alt="touxiang">
 				<ul>
 					<li>列表项目1</li>
 					<li>列表项目2</li>
 					<li>列表项目3</li>
 				</ul>
 				<h3>图片</h3>
-				<p>好看的图片</p>
-				<img src="images/banner.png" alt="touxiang">
+				<div class="img2">
+					<p>好看的图片</p>
+				<img src="images/baidu.png" alt="touxiang">
+				</div>
 			</div>
-			<div class="text3">
+			<div class="text">
 				<h2>最后一篇文章</h2>
 				<h3>文章二级标题</h3>
-				<p><span>文章作者</span><span>发表时间</span></p>
+				<p class="p1">
+					<span>文章作者</span>&nbsp;&nbsp;<span>文章发表时间</span>
+				</p>
 				<ol>
 					<li>排名1</li>
 					<li>排名2</li>
 					<li>排名3</li>
 				</ol>
 				<p>表格</p>
-				<table border="1">
-					<caption>表格标题</caption>
+				<table> 
+					<tbody>
+						<caption>表格标题</caption>
+					<tr>
+						<th>1</th>
+						<th>2</th>
+						<th>3</th>
+					</tr>
 					<tr>
 						<td>表头</td>
 						<td>表头</td>
@@ -90,36 +163,81 @@
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2">总计</td>
-						<td>1000</td>
+						<td>总计</td>
+						<td colspan="2">1000</td>
 					</tr>
+					</tbody>
 				</table>
 			</div>
 		</div>
 		<div class="sidebar">
-			<h3>侧栏标题</h3>
+			<h1>侧栏标题</h1>
 			<form>
-				请输入邮箱地址：<input type="text" placeholder="请输入邮箱">
-				<p>邮箱地址请按照格式输入</p>
-				请输入密码：<input type="password" placeholder="请输入初始密码"> 请重复输入密码：<input type="password" placeholder="请再次输入密码">
-				<p>密码为6-16位字母和数字组合</p>
-				性别：
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								请输入邮箱地址：<input type="text" placeholder="请输入邮箱">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>邮箱地址请按照格式输入</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								请输入密码：<input type="password" placeholder="请输入初始密码"> 
+							</td>
+						</tr>
+						<tr>
+							<td>
+								请重复输入密码：<input type="password" placeholder="请再次输入密码">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								密码为6-16位字母和数字组合
+							</td>
+						</tr>
+						<tr>
+							<td>
+								性别：
 				<input type="radio" name="sex" value="man">男
-				<input type="radio" name="sex" value="woman">女 城市：
+				<input type="radio" name="sex" value="woman">女
+							</td>
+						</tr>
+						<tr>
+							<td>
+								 城市：
 				<select name="chengshi">
-					<option value="beijing">beijing</option>
-					<option value="shanghai">shanghai</option>
+					<option value="beijing">北京</option>
+					<option value="shanghai">上海</option>
+					<option value="xian">西安</option>
 				</select>
-				爱好：
-				<input type="checkbox" name="aihao" value="yundong">运动
-				<input type="checkbox" name="aihao" value="chi">吃 个人描述：
-				<textarea name="aa" cols=30 rows=0>多行文本框
+							</td>
+						</tr>
+						<tr>
+							<td>
+								爱好：
+				<input type="checkbox" name="aihao" value="lanqiu">篮球
+				<input type="checkbox" name="aihao" value="zuqiu">足球
+				<input type="checkbox" name="aihao" value="yumaoqiu">羽毛
+							</td>
+						</tr>
+						<tr>
+							<td>
+								 个人描述：
+				<textarea class="miaoshu" name="aa" cols=30 rows=0 placeholder="多行输入框">
             </textarea>
-				<input type="button" value="提交">
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</form>
-			<p>版权所有©</p>
 		</div>
-
+<button id="submit">确认提交</button>
+			<p>版权所有©</p>
 	</body>
 
 </html>
