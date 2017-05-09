@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue 2.0</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-on:input="changeTitle">
+        <p>{{ title }}</p>
+        <p>{{sayhello()}}</p>
+        <p><a v-bind:href="link">百度</a> </p>
+
+        <p v-html="finishlink"></p>
+        <br>
+        <button v-on:click="increase">按钮</button>
+        <p>{{counter}}</p>
+        <p v-on:mousemove="updateCoordinatea">Coordinatea:{{x}}/{{y}}</p>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            title: 'Hello Vue.js!',
+            link: "http://www.baidu.com",
+            finishlink: "<a v-bind:href='link'>百度</a>",
+            counter: 0,
+            x:0,
+            y:0
+        },
+        methods: {
+            changeTitle: function(event) {
+                this.title = event.target.value;
+            },
+            sayhello: function() {
+                this.title = "hello";
+                return this.title;
+            },
+            increase: function() {
+                this.counter++;
+            },
+            updateCoordinatea:function(event){
+                this.x=event.clientX;
+                this.y=event.clientY;
+            }
+        }
+    })
+</script>
+
+</html>
