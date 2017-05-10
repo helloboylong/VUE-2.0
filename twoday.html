@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue 2.0</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="Coucter++">Increase</button>
+        <button v-on:click="Coucter--">Decrease</button>
+        <button v-on:click="secondCoucter++">Increase second</button>
+        <p>Coucter:{{Coucter}}|{{secondCoucter}}</p>
+        <p>Reult:{{reult()}}|{{output}}</p>
+        <P>另一个</P>
+        <!--        超链接-->
+        <button @click="changeLink">click to change link</button>
+        <a :href="link">Link</a>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            Coucter: 0,
+            secondCoucter: 0,
+            link: "www.baidu.com",
+        },
+        computed: {
+            output: function() {
+                console.log("Cmputed");
+                return this.Coucter > 5 ? "Coucter 5" : "Smaller than 5"
+            }
+        },
+        watch: {
+            Coucter: function(oldvalue, newvalue) {
+                var vm = this
+                setTimeout(function() {
+                    vm.Coucter = 0;
+                }, 2000)
+            }
+        },
+        methods: {
+            reult: function() {
+                console.log("Methods");
+                return this.Coucter > 5 ? "Coucter 5" : "Smaller than 5";
+            },
+            changeLink: function() {
+                this.link = "www.gogle.com";
+            }
+        }
+    })
+
+</script>
+
+</html>

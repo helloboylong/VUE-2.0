@@ -16,9 +16,13 @@
 
         <p v-html="finishlink"></p>
         <br>
-        <button v-on:click="increase">按钮</button>
+        <button v-on:click="increase(2)">按钮</button>
         <p>{{counter}}</p>
-        <p v-on:mousemove="updateCoordinatea">Coordinatea:{{x}}/{{y}}</p>
+        <p v-on:mousemove="updateCoordinatea">
+            Coordinatea:{{x}}/{{y}} =
+            <span v-on:mousemove.stop="dummy">DEAD SPOT</span>
+        </p>
+        <input type="text" v-on:keyup.enter.space="alertMe">
     </div>
 </body>
 <script>
@@ -29,23 +33,29 @@
             link: "http://www.baidu.com",
             finishlink: "<a v-bind:href='link'>百度</a>",
             counter: 0,
-            x:0,
-            y:0
+            x: 0,
+            y: 0
         },
         methods: {
-            changeTitle: function(event) {
+            changeTitle: function (event) {
                 this.title = event.target.value;
             },
-            sayhello: function() {
+            sayhello: function () {
                 this.title = "hello";
                 return this.title;
             },
-            increase: function() {
-                this.counter++;
+            increase: function (step) {
+                this.counter += step;
             },
-            updateCoordinatea:function(event){
-                this.x=event.clientX;
-                this.y=event.clientY;
+            updateCoordinatea: function (event) {
+                this.x = event.clientX;
+                this.y = event.clientY;
+            },
+            dummy: function (event) {
+                event.stopPropagation();
+            },
+            alertMe: function () {
+                alert("hello!")
             }
         }
     })

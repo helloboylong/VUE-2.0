@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue 2.0</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style>
+        .demo {
+            width: 100px;
+            height: 100px;
+            background: gray;
+            display: inline-block;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="demo" :style="{backgroundColor:color}"></div>
+        <div class="demo" :style="Mystyle"></div>
+        <div class="demo" :style="[Mystyle,{height:width+'px'}]"></div>
+        <hr>
+        <input type="text" v-model="color">
+        <input type="text" v-model="width">
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            color: "gray",
+            width: 100
+        },
+        computed: {
+            Mystyle: function() {
+                return {
+                    backgroundColor: this.color,
+                    width: this.width + "px"
+                }
+            }
+        }
+    })
+
+</script>
+
+</html>
