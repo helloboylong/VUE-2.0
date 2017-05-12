@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue 2.0</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+    </div>
+</body>
+<script> var vm1 = new Vue({
+        el: '#app',
+        data: {
+            title:"this VUEJS Instance";
+        },
+        methods: {
+            show: function () {
+                this.showParagph = true;
+                this.updateTitle("this VUEJS Instance (Update)");
+                console.log(this.$refs)
+                this.$refs.myButton.innerHTML = "Text";
+            },
+            updateTitle: function (title) {
+                this.title = title;
+            }
+        },
+        computed: {
+            lovercaseTitle: function () {
+                return this.title.toLowerCase();
+            }
+        },
+        watch: {
+            title: function (value) {
+                alert("title changed,new value" + value)
+            }
+        }
+    })
+</script>
+
+</html>

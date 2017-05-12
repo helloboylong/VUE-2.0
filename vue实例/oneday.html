@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue 2.0</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app1">
+        <h1 ref="heading">{{title}}</h1>
+        <!--       ref (参考)-->
+        <button @click="show" ref="myButton">show Paragph(表演)</button>
+        <p v-if="showParagph">this is always visible(显示/看的见的)</p>
+    </div>
+
+
+    <div id="app2">
+        <h1>{{title}}</h1>
+        <button @click="onChange">change something vue 1</button>
+<!--        4-->
+        <hello></hello>
+    </div>
+
+
+    <div id="app3">
+
+    </div>
+<!-- 3 -->
+    <hello></hello>
+    <hello></hello>
+</body>
+<script>
+    var data = {
+            title: "this VUEJS Instance(实例)",
+            showParagph: false,
+        }
+    
+    
+    <!--        4-->
+        //component  组成的，构成的
+    Vue.component("hello", {
+        template: "<h1>hello!</h1>"
+    })
+
+    var vm1 = new Vue({
+        el: '#app1',
+        data: data,
+        methods: {
+            show: function () {
+                this.showParagph = true;
+                this.updateTitle("this VUEJS Instance (Update)");
+                console.log(this.$refs)
+                this.$refs.myButton.innerHTML = "Text";
+            },
+            updateTitle: function (title) {
+                this.title = title;
+            }
+        },
+        computed: {
+            lovercaseTitle: function () {
+                return this.title.toLowerCase();
+            }
+        },
+        watch: {
+            title: function (value) {
+                alert("title changed,new value" + value)
+            }
+        }
+    })
+
+    vm1.props = "New!";
+    vm1.$refs.heading.innerText = "something else";
+    console.log(vm1.$data === data)
+
+    setTimeout(function () {
+        vm1.title = "changed by timer"
+        vm1.show();
+    }, 3000)
+
+    var vm2 = new Vue({
+        el: "#app2",
+        data: {
+            title: "the second Instance(实例)"
+        },
+        methods: {
+            onChange: function () {
+                vm1.title = "changed";
+            }
+        }
+    })
+
+<!-- 3 -->
+    var vm3 = new Vue({
+            //el 后可以是标签名 id class 等
+            el: "hello",
+            template: "<h1>hello!</h1>"
+        })
+        //  vm3.$mount("#app3");
+        //    vm3.$mount();
+        //    document.getElementById("app3").appendChild(vm3.$el)
+</script>
+
+</html>
