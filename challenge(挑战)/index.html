@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue 2.0</title>
+    <title>Bootstrap 实例 - 响应式实用工具</title>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .player {
+            background: #26cec1;
+        }
+        
+        .monter {
+            background: #eb8585;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <section class="container" style="padding: 40px;">
+            <div class="row visible-on">
+                <div class="col-xs-5" style="background:#cccccc;">
+                    <h1 class="text-center">You</h1>
+                    <div class="healthbar text-center" style="background:green; color:white;" :style="{width:playerHealth+'%'}">
+                        {{playerHealth}}
+                    </div>
+                </div>
+                <div class="col-xs-1"></div>
+                <div class="col-xs-5" style="background:#cccccc;">
+                    <h1 class="text-center">MONSTER</h1>
+                    <div class="monsterbar text-center" style="background:green; color:white;" :style="{width:monsterHealth+'%'}">
+                        {{monsterHealth}}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <section class="row controls" style="padding:50px;" v-if="!gameIsRuning">
+                <button class="col-xs-12 text-center" style="background:green" @click="startGame">START NEW AGME</button>
+            </section>
+            <section class="row controls" style="padding:50px;" v-else>
+                <div class="col-xs-12 text-center">
+                    <button id="attack" style="background:red;" @click="attack">ATTACK(攻击)</button>
+                    <button id="special-attack" style="background:blue;" @click="specialAttack">SPECIAL(特别)-ATTACK()</button>
+                    <button id="heal" style="background:yellow;" @click="heal">HEAL(治愈)</button>
+                    <button id="give-up" style="background:pinlk;" @click="giveUp">GIVE UP(放弃)</button>
+                </div>
+            </section>
+            <section class="row log" v-if="turns.length>0">
+                <div class="col-xs-12 text-center">
+                    <ul>
+                        <li v-for="turn in turns" :class="{player: turn.isPlayer,monter: !turn.isPlayer}">
+                            {{turn.text}}
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
